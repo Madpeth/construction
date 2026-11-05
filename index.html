@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Firm Name – Building &amp; Construction</title>
+<meta name="description" content="Premium residential and commercial construction. Free site visit and written quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,700;125,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0b1620; --moss:#16302c; --moss2:#1f4039; --stone:#e6e3dd; --stone2:#d6d2ca; --brass:#c19a52; --mist:#9fb0ad; --white:#fff; }
+  * { box-sizing:border-box; margin:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--stone); color:var(--ink); font:400 1.05rem/1.65 "Hanken Grotesk",system-ui,sans-serif; }
+  a { color:inherit; }
+  a:focus-visible { outline:3px solid var(--brass); outline-offset:3px; }
+  .wrap { max-width:1160px; margin:0 auto; padding:0 1.6rem; }
+  h1,h2,h3 { font-family:Archivo,sans-serif; font-stretch:125%; font-weight:800; line-height:1.02; letter-spacing:-0.02em; }
+
+  header { position:fixed; inset:0 0 auto; z-index:20; background:rgba(11,22,32,.82); backdrop-filter:blur(12px); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; height:72px; }
+  .logo { font:800 1.15rem Archivo,sans-serif; font-stretch:125%; text-decoration:none; color:var(--white); letter-spacing:.02em; }
+  .logo b { color:var(--brass); }
+  nav { display:flex; align-items:center; gap:2rem; }
+  nav a { color:#c9d3d1; text-decoration:none; font-weight:500; font-size:.95rem; }
+  nav a:hover { color:var(--white); }
+  nav .pill { background:var(--brass); color:var(--ink); padding:.6rem 1.3rem; border-radius:999px; font-weight:600; }
+  nav .pill:hover { background:var(--white); color:var(--ink); }
+  @media (max-width:760px){ nav a:not(.pill){ display:none; } }
+
+  .hero { min-height:100vh; background:radial-gradient(1200px 600px at 80% 20%, var(--moss2), transparent 60%), var(--ink); color:var(--white); display:flex; align-items:center; padding:7rem 0 4rem; overflow:hidden; }
+  .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:center; }
+  .hero h1 { font-size:clamp(2.8rem,7vw,5.6rem); }
+  .hero p { margin-top:1.5rem; max-width:30rem; font-size:1.2rem; color:#b9c6c4; }
+  .row { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.2rem; }
+  .btn { display:inline-block; padding:1rem 1.8rem; border-radius:999px; font-weight:600; text-decoration:none; background:var(--brass); color:var(--ink); border:1.5px solid var(--brass); transition:background .2s,color .2s; }
+  .btn:hover { background:var(--white); border-color:var(--white); }
+  .btn.o { background:transparent; color:var(--white); border-color:#4b5d63; }
+  .btn.o:hover { border-color:var(--white); background:transparent; }
+  .plan { width:100%; max-width:480px; justify-self:center; }
+  .plan path, .plan line { fill:none; stroke:var(--brass); stroke-width:1.6; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; animation:draw 1.6s cubic-bezier(.6,0,.2,1) forwards; animation-delay:calc(var(--i)*.18s + .2s); }
+  .plan .fade { stroke:var(--mist); stroke-width:1; opacity:.7; }
+  .plan text { fill:var(--mist); font:500 11px "Hanken Grotesk",sans-serif; }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  @media (max-width:860px){ .hero .wrap{ grid-template-columns:1fr; } .plan{ max-width:340px; } }
+
+  section { padding:6rem 0; }
+  h2 { font-size:clamp(2rem,4.6vw,3.4rem); max-width:16em; }
+  .lead { margin-top:1rem; color:#4d5b5a; max-width:34rem; }
+
+  /* Services */
+  .list { margin-top:3rem; border-top:1px solid var(--ink); }
+  .item { display:grid; grid-template-columns:1fr 1fr; gap:1rem 3rem; padding:2rem .5rem; border-bottom:1px solid var(--ink); transition:background .25s,color .25s,padding .25s; }
+  .item:hover { background:var(--moss); color:var(--white); padding-left:1.5rem; padding-right:1.5rem; }
+  .item h3 { font-size:clamp(1.5rem,3vw,2.3rem); }
+  .item p { color:inherit; opacity:.75; align-self:center; }
+  @media (max-width:760px){ .item{ grid-template-columns:1fr; } }
+
+  /* Projects */
+  .dark { background:var(--ink); color:var(--white); }
+  .dark .lead { color:#9fb0ad; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:3rem; }
+  .card { position:relative; background:linear-gradient(160deg,var(--moss2),var(--moss)); border-radius:18px; overflow:hidden; min-height:360px; display:flex; align-items:flex-end; }
+  .card.wide { grid-column:span 2; }
+  .card svg { position:absolute; inset:0; width:100%; height:100%; }
+  .card svg * { fill:none; stroke:var(--brass); stroke-width:1.4; opacity:.9; }
+  .card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .card div { position:relative; padding:1.4rem; width:100%; background:linear-gradient(transparent,rgba(11,22,32,.85)); }
+  .card h3 { font-size:1.35rem; font-stretch:112%; }
+  .card span { color:var(--mist); font-size:.95rem; }
+  @media (max-width:860px){ .grid{ grid-template-columns:1fr; } .card.wide{ grid-column:auto; } }
+
+  /* Process */
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3.5rem; position:relative; list-style:none; padding:0; }
+  .steps::before { content:""; position:absolute; top:11px; left:0; right:0; border-top:2px dashed var(--stone2); }
+  .steps li { position:relative; padding-top:2.6rem; }
+  .steps li::before { content:""; position:absolute; top:0; left:0; width:24px; height:24px; border-radius:50%; background:var(--brass); box-shadow:0 0 0 6px var(--stone); }
+  .steps h3 { font-size:1.4rem; font-stretch:112%; margin-bottom:.4rem; }
+  .steps p { color:#4d5b5a; }
+  @media (max-width:860px){ .steps{ grid-template-columns:1fr 1fr; } .steps::before{ display:none; } }
+  @media (max-width:520px){ .steps{ grid-template-columns:1fr; } }
+
+  /* Quote */
+  .quote { background:var(--moss); color:var(--white); }
+  .quote blockquote { font:700 clamp(1.6rem,3.6vw,2.7rem)/1.2 Archivo,sans-serif; font-stretch:112%; letter-spacing:-.01em; max-width:22em; }
+  .quote cite { display:block; margin-top:1.5rem; font-style:normal; color:var(--brass); font-weight:500; }
+
+  /* Contact */
+  .cta { text-align:center; padding:7rem 0; }
+  .cta h2 { margin:0 auto; }
+  .cta .lead { margin:1.2rem auto 0; }
+  .cta .row { justify-content:center; }
+  .cta .btn { background:var(--ink); color:var(--white); border-color:var(--ink); }
+  .cta .btn:hover { background:var(--brass); border-color:var(--brass); color:var(--ink); }
+  .cta .btn.o { background:transparent; color:var(--ink); border-color:var(--ink); }
+  .cta .btn.o:hover { background:var(--ink); color:var(--white); }
+
+  footer { background:var(--ink); color:#8b9c99; padding:2.2rem 0; font-size:.95rem; }
+
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } .plan path,.plan line{ animation:none; stroke-dashoffset:0; } .btn,.item{ transition:none; } }
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="#">YOUR<b>FIRM</b></a>
+  <nav>
+    <a href="#services">Services</a><a href="#projects">Projects</a><a href="#process">Process</a>
+    <a class="pill" href="tel:+910000000000">Call us</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Built to last. Designed to be lived in.</h1>
+    <p>Homes, extensions and commercial buildings, delivered with a fixed written quote, a clear schedule and craftsmanship you can see.</p>
+    <div class="row">
+      <a class="btn" href="#contact">Book a free site visit</a>
+      <a class="btn o" href="#projects">View projects</a>
+    </div>
+  </div>
+  <svg class="plan" viewBox="0 0 480 520" role="img" aria-label="Architectural drawing of a building">
+    <path pathLength="1" style="--i:0" d="M10 470H470"/>
+    <path pathLength="1" style="--i:1" d="M60 470V230H340V470"/>
+    <path pathLength="1" style="--i:2" d="M110 230V130H350V230"/>
+    <path pathLength="1" style="--i:3" d="M92 130H368"/>
+    <path pathLength="1" style="--i:4" d="M340 470V60H420V470"/>
+    <path pathLength="1" style="--i:5" d="M60 330H340M60 400H340M110 180H340"/>
+    <path pathLength="1" style="--i:6" d="M150 130V230M200 130V230M250 130V230M300 130V230"/>
+    <path pathLength="1" style="--i:7" d="M120 230V470M180 230V470M240 230V470M290 230V470" class="fade"/>
+    <path pathLength="1" style="--i:8" d="M446 470V60M438 470H454M438 60H454" class="fade"/>
+    <text x="400" y="500" text-anchor="middle">G.L.</text>
+    <text x="458" y="270" transform="rotate(90 458 270)" text-anchor="middle">18.4 m</text>
+  </svg>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <h2>Everything from foundation to finishing.</h2>
+  <div class="list">
+    <div class="item"><h3>New homes</h3><p>Independent houses and villas built from the ground up, with structure, plumbing, electrical and interiors handled by one team.</p></div>
+    <div class="item"><h3>Renovation and extensions</h3><p>Add floors or rooms, or remodel completely, with minimal disruption to how you live.</p></div>
+    <div class="item"><h3>Commercial fit-outs</h3><p>Shops, offices and warehouses built to your layout, budget and opening date.</p></div>
+    <div class="item"><h3>Repairs and waterproofing</h3><p>Leakage, cracks and structural repairs done properly, with a warranty.</p></div>
+  </div>
+</div></section>
+
+<section id="projects" class="dark"><div class="wrap">
+  <h2>Recent work.</h2>
+  <p class="lead">Replace the drawings with your own project photos. Instructions are in the message that came with this file.</p>
+  <div class="grid">
+    <article class="card wide">
+      <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice"><path d="M90 300H520M130 300V170H400V300M170 170V110H360V170M110 170H420M200 300V220H260V300M300 210H360V260H300Z"/></svg>
+      <div><h3>Project name</h3><span>Residential, 3 floors, 2,400 sq ft, 2025</span></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 300 360" preserveAspectRatio="xMidYMid slice"><path d="M90 320V60H210V320M90 320H210M90 110H210M90 160H210M90 210H210M90 260H210M60 320H240"/></svg>
+      <div><h3>Project name</h3><span>Commercial tower, 2024</span></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 300 360" preserveAspectRatio="xMidYMid slice"><path d="M30 300H270M50 300V190L110 150V190L170 150V190L230 150V300M80 300V240H130V300"/></svg>
+      <div><h3>Project name</h3><span>Warehouse and factory, 2024</span></div>
+    </article>
+    <article class="card wide">
+      <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice"><path d="M60 300H540M100 300V150H300V300M300 300V200H500V300M80 150H320M280 200H520M140 300V230H200V300M340 300V240H400V300"/></svg>
+      <div><h3>Project name</h3><span>Renovation and extension, 2023</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <h2>A clear process from the first visit to the keys.</h2>
+  <ol class="steps">
+    <li><h3>Site visit</h3><p>We visit, measure and listen. It is free.</p></li>
+    <li><h3>Written quote</h3><p>A fixed price and timeline, in writing, before we start.</p></li>
+    <li><h3>Construction</h3><p>Our crew builds while you get regular photo updates.</p></li>
+    <li><h3>Handover</h3><p>Final inspection together, then the keys and a warranty.</p></li>
+  </ol>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <blockquote>“They finished on the day they promised and the price never changed. Add a real client review here.”</blockquote>
+  <cite>Client name, project</cite>
+</div></section>
+
+<section id="contact" class="cta"><div class="wrap">
+  <h2>Planning to build? Let's talk.</h2>
+  <p class="lead">Share your plot size and what you want built. We will arrange a free site visit and quote.</p>
+  <div class="row">
+    <a class="btn" href="tel:+910000000000">Call +91 00000 00000</a>
+    <a class="btn o" href="https://wa.me/910000000000">WhatsApp</a>
+    <a class="btn o" href="mailto:you@example.com">Email</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Your Firm Name. Office address and registration number here.</div></footer>
+</body>
+</html>
